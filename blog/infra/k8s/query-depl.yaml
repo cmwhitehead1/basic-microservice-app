@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: query-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: query
+  template:
+    metadata:
+      labels:
+        app: query
+    spec:
+      containers:
+        - name: query
+          image: cdub/query
+---
+# Post Service config object
+kind: Service
+apiVersion: v1
+metadata:
+  name:  query-clusterip-service
+spec:
+  selector:
+    app: query
+  ports:
+  - name:  query-service-port
+    protocol: TCP
+    port:  4002
+    targetPort:  4002

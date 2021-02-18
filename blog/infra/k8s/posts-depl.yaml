@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: posts-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: posts
+  template:
+    metadata:
+      labels:
+        app: posts
+    spec:
+      containers:
+        - name: posts
+          image: cdub/posts
+---
+# Post Service config object
+kind: Service
+apiVersion: v1
+metadata:
+  name:  posts-clusterip-service
+spec:
+  selector:
+    app: posts
+  ports:
+  - name:  posts-service-port
+    protocol: TCP
+    port:  4000
+    targetPort:  4000

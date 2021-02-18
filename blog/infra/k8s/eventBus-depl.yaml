@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: event-bus-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: event-bus
+  template:
+    metadata:
+      labels:
+        app: event-bus
+    spec:
+      containers:
+        - name: event-bus
+          image: cdub/event-bus
+---
+# Event Bus service config object
+kind: Service
+apiVersion: v1
+metadata:
+  name:  event-bus-service
+spec:
+  selector:
+    app:  event-bus
+  ports:
+  - name:  name-of-the-port
+    protocol: TCP
+    port:  4005
+    targetPort:  4005
