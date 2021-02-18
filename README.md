@@ -13,4 +13,4 @@ Using:
 
 Make sure you have a "posts.com" pointing to your localhost in your host file.
 
-** Very basic, not suitable for production..
+** Very basic architecture, not suitable for production..
