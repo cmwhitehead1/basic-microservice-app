@@ -6,6 +6,7 @@ Using:
   - React
   - Express
   - Docker
+  - NGINX
   - Kubernetes
   - Ingress
   - Skaffold
