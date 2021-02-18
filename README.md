@@ -9,3 +9,5 @@ Using:
   - Kubernetes
   - Ingress
   - Skaffold
+
+Make sure you have a "posts.com" pointing to your localhost in your host file.
