@@ -11,6 +11,10 @@ Using:
   - Ingress
   - Skaffold
 
+
+## scaffold dev
+to run the app..
+
 Make sure you have a "posts.com" pointing to your localhost in your host file.
 
 ** Very basic architecture, not suitable for production..
