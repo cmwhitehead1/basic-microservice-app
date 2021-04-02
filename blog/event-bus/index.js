@@ -5,6 +5,9 @@ const axios = require('axios');
 const app = express();
 app.use(bodyParser.json());
 
+
+// This events array is used to hold all the events.
+// Useful for when a service goes down and needs to get a list of all events that it missed.
 const events = [];
 
 app.post('/events', (req, res) => {
