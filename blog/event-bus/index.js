@@ -15,7 +15,7 @@ app.post('/events', (req, res) => {
 
   events.push(event);
 
-  axios.post('http://posts-clusterip-service:4000/events', event); // using the kubernetes cluster ip or routering..
+  axios.post('http://posts-clusterip-service:4000/events', event); // using the kubernetes cluster ip for routering..
   axios.post('http://comments-clusterip-service:4001/events', event);
   axios.post('http://query-clusterip-service:4002/events', event);
   axios.post('http://moderation-clusterip-service:4003/events', event);
